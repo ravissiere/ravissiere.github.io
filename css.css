@@ -1,0 +1,46 @@
+/* font-PurplePurse */
+@import url('https://fonts.googleapis.com/css2?family=Purple+Purse&display=swap');
+
+/* font-inter */
+@import url('https://fonts.googleapis.com/css2?family=Inter&family=Purple+Purse&display=swap');
+
+body {
+    background-color: #333;
+    margin: 40px;
+}
+
+p {
+    margin: 0;
+}
+
+#main-container {
+    background-color: #fff;
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+    border-radius: 20px;
+    padding: 80px 0;
+}
+
+#main-title {
+    display: inline-block;
+    color: #222;
+}
+
+#main-h1-en {
+    font-family: 'Purple Purse', serif;
+}
+
+#main-h1-kr {
+    font-family: 'Inter', sans-serif;
+}
+
+.main-section_img {
+    width: 80%;
+}
+
+#text_basic {
+    color: #333;
+    font-size: 16px;
+    line-height: 28px;
+}
