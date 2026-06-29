@@ -54,7 +54,7 @@ p {
     display: none !important;
 }
 
-.section section_address lst {
+.address .phone {
     font-family: 'Inter', sans-serif;
     color: #222;
     font-size: 14px;
