@@ -60,3 +60,23 @@ p {
     font-size: 14px;
     line-height: 24px;
 }
+
+#bgm-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 9999;
+    background-color: rgba(255, 255, 255, 0.9);
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    padding: 8px 15px;
+    font-size: 14px;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: all 0.3s;
+}
+
+#bgm-btn.playing {
+    background-color: #f0f0f0;
+    border-color: #bbb;
+}
