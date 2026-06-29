@@ -14,6 +14,14 @@
 </head>
 <body>
     <div id="main-container">
+        <!-- bgm 버튼 -->
+        <div id="youtube-player" style="display:none;"></div>
+
+        <button id="bgm-btn" onclick="toggleBGM()">
+            <span id="bgm-icon">🎵</span>
+        </button>
+        <!-- bgm 버튼 -->
+
         <!-- main-section-->
         <div>
             <div id="main-title">
@@ -78,7 +86,57 @@
         <!-- 오시는길 -->
 
 
-        
+
     </div>
 </body>
 </html>
+
+
+
+<script>
+    // 유튜브 API 로드
+    var tag = document.createElement('script');
+    tag.src = "https://www.youtube.com/iframe_api";
+    var firstScriptTag = document.getElementsByTagName('script')[0];
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+    var player;
+    var isPlaying = false;
+
+    // 유튜브 플레이어 초기화
+    function onYouTubeIframeAPIReady() {
+        player = new YT.Player('youtube-player', {
+            height: '0',
+            width: '0',
+            videoId: 'CRVKz7dxMEg', // 예: 유튜브 주소 뒤의 'dQw4w9WgXcQ' 같은 코드 입력
+            playerVars: {
+                'autoplay': 0,
+                'controls': 0,
+                'loop': 1,
+                'playlist': 'CRVKz7dxMEg' // 반복 재생을 위해 위와 동일한 ID 입력
+            }
+        });
+    }
+
+    // 버튼 클릭 시 실행되는 함수
+    function toggleBGM() {
+        var btn = document.getElementById('bgm-btn');
+        var icon = document.getElementById('bgm-icon');
+
+        if (!isPlaying) {
+            // 재생 시작
+            player.playVideo();
+            icon.innerText = "🔇";
+            btn.innerHTML = "<span id='bgm-icon'>🔇</span>";
+            btn.classList.add('playing');
+            isPlaying = true;
+        } else {
+            // 일시 정지
+            player.pauseVideo();
+            icon.innerText = "🎵";
+            btn.innerHTML = "<span id='bgm-icon'>🎵</span>";
+            btn.classList.remove('playing');
+            isPlaying = false;
+        }
+    }
+</script>
